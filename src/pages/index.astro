@@ -1,0 +1,328 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+        <title>ENT Stack</title>
+        <meta
+          name="description"
+          content="Full-stack monorepo that integrates Express, Next.js, and TRPC, offering a streamlined solution for web app development."
+        />
+        <link rel="icon" type="image/x-icon" href=`${baseUrl}/favicon.ico`>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+            body{
+                font-family: "Readex Pro", sans-serif;
+                font-weight: 400;
+            }
+        </style>
+    </head>
+    <body class="h-full bg-primary bg-fixed text-primary">
+        <header data-testid="header" class="fixed left-0 right-0 top-0 z-30 mx-auto flex w-full max-w-one-col justify-center bg-primary header-based-h">
+            <div class="relative flex w-full max-w-full items-center justify-between px-5">
+                <a data-testid="logo" class="select-none text-primary hover:underline flex h-[25px] items-center justify-center" href="/en">
+                    <div class="mr-2 text-xl">ENT</div>
+                    <img src=`${baseUrl}/logo.png` alt="Logo" class="max-h-full max-w-full">
+                </a>
+            </div>
+        </header>
+        <main class="desktop-w-md:px-10 flex min-h-full w-full flex-col items-center px-5 header-based-pt desktop-w:px-10">
+            <div class="relative min-h-full w-[1280px] max-w-full">
+                <h1 class="text-3xl mt-10 text-center leading-tight tablet-w:text-5xl tablet-w:leading-tight desktop-w-md:mt-20 desktop-w-md:leading-tight desktop-w-lg:text-6xl desktop-w-lg:leading-tight">
+                   <span>
+                   Where <b class="text-x-next">Next.js</b> meets <b class="text-x-express">Express</b>
+                   </span>
+                </h1>
+                <h2
+                  class="text-2xl mt-5 text-center tablet-w:text-3xl desktop-w-lg:text-5xl desktop-w-lg:text-10xl desktop-w-lg:leading-tight"
+                >
+                    <span>Together when you want, separate when you need</span>
+                </h2>
+                <img
+                  src=`${baseUrl}/illustration.png`
+                  alt="ENT Stack Illustration"
+                  title="ENT Stack Illustration"
+                  class="mx-auto mt-20 w-[200px]"
+                />
+                <div class="my-20 flex justify-center gap-5">
+                    <button
+                      class="flex items-center justify-center select-none font-medium disabled:pointer-events-none disabled:opacity-50 outline-none bg-gradient-button duration-xs hover:shadow-button rounded-full text-shadow transition-colors button-animation h-[40px] min-w-[160px]"
+                      type="button"
+                    >
+                        <a
+                          title="Setup"
+                          href=`${baseUrl}/ent-stack/setup`
+                          class="flex items-center justify-center w-full h-full"
+                        >
+                            <span>Setup</span>
+                        </a>
+                    </button>
+                    <button
+                      class="flex items-center justify-center select-none font-medium disabled:pointer-events-none disabled:opacity-50 outline-none bg-button-primary hover:bg-button-secondary transition-background-color duration-xs rounded-full h-[40px] min-w-[160px]"
+                      type="button"
+                    >
+                        <a
+                          title="Documentation"
+                          href=`${baseUrl}/ent-stack/documentation`
+                          class="flex items-center justify-center w-full h-full"
+                        >
+                            <span>Documentation</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="mx-auto mb-10 max-w-[960px]">
+                    <h3 class="text-2xl tablet-w:text-3xl desktop-w-lg:text-4xl">
+                        <span>What's Inside</span>
+                    </h3>
+                    <p class="text-muted text-md tablet-w:text-lg desktop-w-lg:text-lg mt-5 text-left">
+                      <span>
+                      The ENT Stack is a robust, full-stack monorepo that integrates Express, Next.js,
+                      and TRPC, offering a streamlined solution for web app development.
+                      </span>
+                    </p>
+                    <p class="text-muted text-md tablet-w:text-lg desktop-w-lg:text-lg mt-5 text-left">
+                      <span>
+                      It allows you to build and share code between frontend and backend in a single project
+                      while maintaining the flexibility to host them independently.
+                      </span>
+                    </p>
+                    <table class="mt-10 w-full">
+                        <thead>
+                            <tr class="border-primary border-b">
+                                <th class="w-[50%] p-3"><span>Tool/Tech</span></th>
+                                <th class="w-[50%] p-3"><span>Role</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Express 5"
+                                      href="https://expressjs.com"
+                                    >
+                                        <span>Express 5</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted text-center">
+                                    <span>Backend Framework</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Next.js 15"
+                                      href="https://nextjs.org"
+                                    >
+                                        <span>Next.js 15</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted text-center">
+                                    <span>Frontend Framework</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="TRPC 11"
+                                      href="https://trpc.io"
+                                    >
+                                        <span>TRPC 11</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Typesafe APIs</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="text-muted p-3 text-center">
+                                    <span>Custom i18n solution</span>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Route &amp; Message Translations</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Drizzle"
+                                      href="https://orm.drizzle.team"
+                                    >
+                                        <span>Drizzle</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Database ORM</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Lucide React"
+                                      href="https://lucide.dev/guide/packages/lucide-react"
+                                    >
+                                        <span>Lucide React</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Icons</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Mailslurp"
+                                      href="https://mailslurp.com"
+                                    >
+                                        <span>Mailslurp</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Email Testing</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="MySQL 8"
+                                      href="https://www.mysql.com"
+                                    >
+                                        <span>MySQL 8</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Database</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Pino"
+                                      href="https://getpino.io"
+                                    >
+                                        <span>Pino</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Logging</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Playwright"
+                                      href="https://playwright.dev"
+                                    >
+                                        <span>Playwright</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Testing Framework</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Resend"
+                                      href="https://resend.com"
+                                    >
+                                        <span>Resend</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Email Sending</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="T3 Env"
+                                      href="https://env.t3.gg"
+                                    >
+                                        <span>T3 Env</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Environment Variables</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Tanstack Query"
+                                      href="https://tanstack.com/query"
+                                    >
+                                        <span>Tanstack Query</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Async State Management</span>
+                                </td>
+                            </tr>
+                            <tr class="border-primary border-b">
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Zod"
+                                      href="https://zod.dev"
+                                    >
+                                        <span>Zod</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>Validation</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-center">
+                                    <a
+                                      class="text-muted hover:text-primary hover:underline"
+                                      target="_blank"
+                                      title="Zustand"
+                                      href="https://zustand-demo.pmnd.rs"
+                                    >
+                                        <span>Zustand</span>
+                                    </a>
+                                </td>
+                                <td class="text-muted p-3 text-center">
+                                    <span>State Management</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

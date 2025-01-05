@@ -1,0 +1,80 @@
+---
+title: Setup
+description: Setup instructions for the Application component of the ENT Stack.
+---
+
+This sections shows how to quickly set up and run the **Application** component of the ENT stack for local development. It covers prerequisites, configuring the backend (Express) and frontend (Next.js), and getting a local MySQL database running with Docker.
+
+### Prerequisites
+
+- **Git CLI**
+- **Node.js**
+- **PNPM**
+- **Docker CLI** (for local MySQL database)
+- A Unix-like shell environment (e.g., Bash, Zsh)
+
+### 1/ Scaffold Your Project
+
+```bash
+pnpm create ent-stack
+```
+
+### 2/ Set Up the Local Database
+
+Run the local database using Docker:
+
+```bash
+bin/docker/run-local-db.sh
+```
+
+Then create tables:
+
+```bash
+pnpm db:push
+```
+
+### 3/ Configure Environment Variables
+
+**3.1/ Create backend (`apps/backend/.env`) file:**
+- Fill it with [these example values](/ent-stack-docs-private/env.backend.txt).
+- Replace `<secret>` placeholders with real values:
+  - **JWT_SECRET:** [Generate a secret](https://jwtsecret.com/generate)
+  - **RESEND_API_KEY:** [Create a Resend account](https://resend.com/signup)
+  - **MAILSLURP_API_KEY, MAILSLURP_INBOX_ID, MAILSLURP_EMAIL:** [Create a Mailslurp account](https://app.mailslurp.com/sign-up)
+
+**3.2/ Create frontend (`apps/frontend/.env`) file:**
+- Fill it with [these example values](/ent-stack-docs-private/env.frontend.txt).
+- Replace `<secret>` values (e.g., JWT_SECRET).
+
+⚠️ Here is the list of values that **MUST BE THE SAME** in both backend and frontend **.env** files:
+
+| Backend       | Frontend                  |
+|---------------|---------------------------|
+| SITE_NAME     | NEXT_PUBLIC_SITE_NAME     |
+| COOKIE_DOMAIN | NEXT_PUBLIC_COOKIE_DOMAIN |
+| BACKEND_URL   | NEXT_PUBLIC_BACKEND_URL   |
+| FRONTEND_URL  | NEXT_PUBLIC_FRONTEND_URL  |
+| JWT_SECRET    | JWT_SECRET                |
+
+**Note:** SERVICE_EMAIL and SECURITY_EMAIL do not need real domains (they are only used in translations).
+
+### 4/ Install Dependencies
+
+From the project root:
+
+```bash
+pnpm install
+```
+
+### 5/ Run the Application
+
+```bash
+pnpm dev
+```
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend: [http://localhost:3001](http://localhost:3001)
+
+---
+
+At this point, your application should be up and running locally. Adjust values, domains, and environment settings as needed.
