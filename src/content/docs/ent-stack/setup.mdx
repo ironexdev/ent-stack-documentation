@@ -36,14 +36,14 @@ pnpm db:push
 ### 3/ Configure Environment Variables
 
 **3.1/ Create backend (`apps/backend/.env`) file:**
-- Fill it with [these example values](/ent-stack-docs-private/env.backend.txt).
+- Fill it with [these example values](/ent-stack-documentation/env.backend.txt).
 - Replace `<secret>` placeholders with real values:
   - **JWT_SECRET:** [Generate a secret](https://jwtsecret.com/generate)
   - **RESEND_API_KEY:** [Create a Resend account](https://resend.com/signup)
   - **MAILSLURP_API_KEY, MAILSLURP_INBOX_ID, MAILSLURP_EMAIL:** [Create a Mailslurp account](https://app.mailslurp.com/sign-up)
 
 **3.2/ Create frontend (`apps/frontend/.env`) file:**
-- Fill it with [these example values](/ent-stack-docs-private/env.frontend.txt).
+- Fill it with [these example values](/ent-stack-documentation/env.frontend.txt).
 - Replace `<secret>` values (e.g., JWT_SECRET).
 
 ⚠️ Here is the list of values that **MUST BE THE SAME** in both backend and frontend **.env** files:
