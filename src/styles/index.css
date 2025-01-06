@@ -32,3 +32,14 @@
     --sl-text-h2: 30px;
     --sl-text-h3: 24px;
 }
+
+main ul {
+    list-style: disc;
+}
+main ol {
+    list-style: normal;
+}
+
+main ul, main ol {
+    padding-left: 20px;
+}

@@ -32,16 +32,11 @@ export default {
     extend: {
       backgroundColor: {
         primary: "#222222",
-        input: "#353535",
         button: {
           primary: "#222222",
           secondary: "#353535",
           disabled: "#353535",
-        },
-        select: {
-          primary: "#353535",
-          secondary: "#555555",
-        },
+        }
       },
       backgroundImage: {
         "gradient-body":

@@ -19,18 +19,12 @@ This sections shows how to quickly set up and run the **Application** component 
 pnpm create ent-stack
 ```
 
-### 2/ Set Up the Local Database
+### 2/ Install Dependencies
 
-Run the local database using Docker:
-
-```bash
-bin/docker/run-local-db.sh
-```
-
-Then create tables:
+From the project root:
 
 ```bash
-pnpm db:push
+pnpm install
 ```
 
 ### 3/ Configure Environment Variables
@@ -58,12 +52,18 @@ pnpm db:push
 
 **Note:** SERVICE_EMAIL and SECURITY_EMAIL do not need real domains (they are only used in translations).
 
-### 4/ Install Dependencies
+### 4/ Set Up the Local Database
 
-From the project root:
+Run the local database using Docker:
 
 ```bash
-pnpm install
+bin/docker/run-local-db.sh
+```
+
+Then create tables:
+
+```bash
+pnpm db:push
 ```
 
 ### 5/ Run the Application
