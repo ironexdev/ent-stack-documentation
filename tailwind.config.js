@@ -31,9 +31,9 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#232425",
+        primary: "#171819",
         button: {
-          primary: "#232425",
+          primary: "#171819",
           secondary: "#333435",
           disabled: "#333435",
         }
