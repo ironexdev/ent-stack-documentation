@@ -35,7 +35,13 @@ const baseUrl = import.meta.env.BASE_URL;
         </header>
         <main class="desktop-w-md:px-10 flex min-h-full w-full flex-col items-center px-5 header-based-pt desktop-w:px-10">
             <div class="relative min-h-full w-[1280px] max-w-full">
-                <h1 class="text-3xl mt-10 text-center leading-tight tablet-w:text-5xl tablet-w:leading-tight desktop-w-md:mt-20 desktop-w-md:leading-tight desktop-w-lg:text-6xl desktop-w-lg:leading-tight">
+                <img
+                  src=`${baseUrl}/illustration.png`
+                  alt="ENT Stack Illustration"
+                  title="ENT Stack Illustration"
+                  class="mx-auto w-[500px]"
+                />
+                <h1 class="text-3xl mt-10 text-center leading-tight tablet-w:text-5xl tablet-w:leading-tight desktop-w-md:mt-10 desktop-w-md:leading-tight desktop-w-lg:text-6xl desktop-w-lg:leading-tight">
                    <span>
                    Where <b class="text-x-next">Next.js</b> meets <b class="text-x-express">Express</b>
                    </span>
@@ -45,13 +51,7 @@ const baseUrl = import.meta.env.BASE_URL;
                 >
                     <span>Together when you want, separate when you need</span>
                 </h2>
-                <img
-                  src=`${baseUrl}/illustration.png`
-                  alt="ENT Stack Illustration"
-                  title="ENT Stack Illustration"
-                  class="mx-auto mt-20 w-[200px]"
-                />
-                <div class="my-20 flex justify-center gap-5">
+                <div class="my-16 flex justify-center gap-5">
                     <button
                       class="flex items-center justify-center select-none font-medium disabled:pointer-events-none disabled:opacity-50 outline-none bg-gradient-button duration-xs hover:shadow-button rounded-full text-shadow transition-colors button-animation h-[40px] min-w-[160px]"
                       type="button"

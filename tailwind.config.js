@@ -31,11 +31,11 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#222222",
+        primary: "#232425",
         button: {
-          primary: "#222222",
-          secondary: "#353535",
-          disabled: "#353535",
+          primary: "#232425",
+          secondary: "#333435",
+          disabled: "#333435",
         }
       },
       backgroundImage: {
