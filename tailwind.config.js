@@ -116,7 +116,7 @@ export default {
       },
     },
   },
-  plugins: [buttonAnimationPlugin(), headerPlugin()],
+  plugins: [buttonAnimationPlugin(), headerPlugin(), gradientBorder()],
 }
 
 function buttonAnimationPlugin() {
@@ -141,8 +141,8 @@ function buttonAnimationPlugin() {
 function headerPlugin() {
   return plugin(function ({ addUtilities }) {
     const breakpoint = settings.breakpoints.height.md
-    const small = 50
-    const large = 100
+    const small = 60
+    const large = 80
 
     addUtilities({
       ".header-based-h": {
@@ -162,6 +162,20 @@ function headerPlugin() {
         [`@media (min-height: ${breakpoint}px)`]: {
           top: `${large}px`,
         },
+      },
+    })
+  })
+}
+
+function gradientBorder() {
+  return plugin(function ({ addUtilities }) {
+    addUtilities({
+      ".border-fade-header": {
+        borderStyle: "solid",
+        borderWidth: "0 0 1px 0",
+        borderImageSource:
+            "linear-gradient(to right, transparent, #232425, transparent)",
+        borderImageSlice: "1",
       },
     })
   })
