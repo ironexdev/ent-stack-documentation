@@ -33,8 +33,8 @@ pnpm install
 - Fill it with [these example values](/ent-stack-documentation/env.backend.txt).
 - Replace `<secret>` placeholders with real values:
   - **JWT_SECRET:** [Generate a secret](https://jwtsecret.com/generate)
-  - **RESEND_API_KEY:** [Create a Resend account](https://resend.com/signup)
-  - **MAILSLURP_API_KEY, MAILSLURP_INBOX_ID, MAILSLURP_EMAIL:** [Create a Mailslurp account](https://app.mailslurp.com/sign-up)
+  - **RESEND_API_KEY:** [Create a Resend account](https://resend.com/signup) <small>(can be skipped - only needed for e-mail sending)</small>
+  - **MAILSLURP_API_KEY, MAILSLURP_INBOX_ID, MAILSLURP_EMAIL:** [Create a Mailslurp account](https://app.mailslurp.com/sign-up) <small>(can be skipped - only needed for e-mail testing)</small>
 
 **3.2/ Create frontend (`apps/frontend/.env`) file:**
 - Fill it with [these example values](/ent-stack-documentation/env.frontend.txt).
@@ -50,7 +50,7 @@ pnpm install
 | FRONTEND_URL  | NEXT_PUBLIC_FRONTEND_URL  |
 | JWT_SECRET    | JWT_SECRET                |
 
-**Note:** SERVICE_EMAIL and SECURITY_EMAIL do not need real domains (they are only used in translations).
+**Note:** SERVICE_EMAIL and SECURITY_EMAIL don't need real domains (they are only used in translations).
 
 ### 4/ Set Up the Local Database
 
