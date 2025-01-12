@@ -5,7 +5,6 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
     site: "https://ironexdev.github.io",
-    base: "ent-stack-documentation",
 
     integrations: [tailwind({
        configFile: "./tailwind.config.js",

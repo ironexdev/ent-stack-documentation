@@ -1,6 +1,5 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
@@ -15,7 +14,7 @@ const baseUrl = import.meta.env.BASE_URL;
           name="description"
           content="Full-stack monorepo that integrates Express, Next.js, and TRPC, offering a streamlined solution for web app development."
         />
-        <link rel="icon" type="image/x-icon" href=`${baseUrl}/favicon.ico`>
+        <link rel="icon" type="image/x-icon" href=`/favicon.ico`>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
             body{
@@ -27,16 +26,16 @@ const baseUrl = import.meta.env.BASE_URL;
     <body class="h-full bg-primary bg-fixed text-primary">
         <header data-testid="header" class="fixed left-0 right-0 top-0 z-30 mx-auto flex w-full max-w-one-col justify-center bg-primary header-based-h border-fade-header">
             <div class="relative flex w-full max-w-full items-center justify-between px-5">
-                <a data-testid="logo" class="select-none text-primary hover:underline flex h-[25px] items-center justify-center hover:no-underline" href=`${baseUrl}`>
+                <a data-testid="logo" class="select-none text-primary hover:underline flex h-[25px] items-center justify-center hover:no-underline" href=``>
                     <div class="mr-2 text-xl">ENT Stack</div>
-                    <img src=`${baseUrl}/logo.png` alt="Logo" class="max-h-full max-w-full">
+                    <img src=`/logo.png` alt="Logo" class="max-h-full max-w-full">
                 </a>
                 <a
                   href="https://github.com/ironexdev/ent-stack"
                   target="_blank"
                   class="flex size-[40px] items-center justify-center">
                     <img
-                      src=`${baseUrl}/github-icon.png`
+                      src=`/github-icon.png`
                       alt="GitHub"
                       title="GitHub"
                       class="size-[24px]"
@@ -47,7 +46,7 @@ const baseUrl = import.meta.env.BASE_URL;
         <main class="desktop-w-md:px-10 flex min-h-full w-full flex-col items-center px-5 header-based-pt desktop-w:px-10">
             <div class="relative min-h-full w-[1280px] max-w-full pt-10">
                 <img
-                  src=`${baseUrl}/illustration.png`
+                  src=`/illustration.png`
                   alt="ENT Stack Illustration"
                   title="ENT Stack Illustration"
                   class="mx-auto w-[500px] max-w-[90%]"
@@ -69,7 +68,7 @@ const baseUrl = import.meta.env.BASE_URL;
                     >
                         <a
                           title="Setup"
-                          href=`${baseUrl}/ent-stack/setup`
+                          href=`/ent-stack/setup`
                           class="flex items-center justify-center w-full h-full"
                         >
                             <span>Setup</span>
@@ -81,7 +80,7 @@ const baseUrl = import.meta.env.BASE_URL;
                     >
                         <a
                           title="Documentation"
-                          href=`${baseUrl}/ent-stack/documentation`
+                          href=`/ent-stack/documentation`
                           class="flex items-center justify-center w-full h-full"
                         >
                             <span>Documentation</span>
