@@ -3,21 +3,23 @@ title: Setup
 description: Setup instructions for the Application component of the ENT Stack.
 ---
 
-This sections shows how to quickly set up and run the ENT stack for local development. It covers prerequisites, configuring the backend (Express) and frontend (Next.js), and getting a local MySQL database running with Docker.
+Get up and running with the <a href="https://ent-stack.com" target="_blank">ENT Stack</a> in just two steps:
 
-### Prerequisites
-
-- **Git CLI**
-- **Node.js**
-- **PNPM**
-- **Docker CLI** (for local MySQL database)
-- A Unix-like shell environment (e.g., Bash, Zsh)
+**Prerequisites**
+<small>
+    - <a href="https://nodejs.org" target="_blank">Node.js</a>
+    - <a href="https://pnpm.io" target="_blank">PNPM</a>
+    - <a href="https://docs.docker.com/reference/cli/docker/#option-types" target="_blank">Docker CLI</a> (for local MySQL database)
+    - A Unix-like shell environment (e.g., Bash, Zsh)
+</small>
 
 ### 1/ 🚀 Create your project
 
 ```bash
-pnpm create ent-stack
+pnpm create ent-stack@latest
 ```
+- Creates a new project (folder) based on specific version of this repository.
+- The version used is specified in the description of the <a href="https://www.npmjs.com/package/create-ent-stack" target="_blank">npm package</a>.
 
 ### 2/ 🔥 Setup
 
@@ -29,11 +31,46 @@ pnpm fire
 - Creates the database and tables
 - Runs dev environments for both the backend and frontend
 
-### Environment Variables
+At this point, your application should be up and running locally. But to enable email sending and testing, you need to follow the final step below.
 
-If you ran create and setup scripts, then your application should be running just fine, but email sending and testing won't work until adjust env variables listed below:
-- To enable email sending, you need to **[sign up for a Resend account](https://resend.com/signup)** and set **SERVICE_EMAIL** and **RESEND_API_KEY**
-- To enable email testing, you need to **[sign up for a Mailslurp account](https://app.mailslurp.com/sign-up)** and set **MAILSLURP_API_KEY**, **MAILSLURP_INBOX_ID** and **MAILSLURP_EMAIL**
+### 3/ 🧪 Configure Mailing and Run Tests
+
+To enable mailing, you need to do the following:
+- **[Sign up for a free Resend account](https://resend.com/signup)** and set **SERVICE_EMAIL**, **SECURITY_EMAIL** and **RESEND_API_KEY** in `apps/backend/.env`
+- Serves as a service for sending e-mails
+<table align="center" width="100%">
+    <tr>
+        <td width="50%">
+            <img src="https://github.com/user-attachments/assets/57bc026b-dc0b-4c88-abc6-d4006b9ff8ae" alt="Resend domain" width="100%" />
+        </td>
+        <td width="50%">
+            <img src="https://github.com/user-attachments/assets/3b7975a9-8749-4729-97a5-efb136ad3622" alt="Resend API Key" width="100%" />
+        </td>
+    </tr>
+</table>
+
+- **[Sign up for a free MailSlurp account](https://app.mailslurp.com/sign-up)** and set **MAILSLURP_API_KEY**, **MAILSLURP_INBOX_ID** and **MAILSLURP_EMAIL** in `apps/backend/.env`
+- Serves as a service for receiving e-mails (for testing purposes)
+<table align="center" width="100%">
+    <tr>
+        <td width="50%">
+            <img src="https://github.com/user-attachments/assets/41affe10-ad42-4d89-a2b3-f69dd8597997" alt="MailSlurp inbox and inbox id" width="100%" />
+        </td>
+        <td width="50%">
+            <img src="https://github.com/user-attachments/assets/60f53cd3-bede-4fb0-9175-7be92955a153" alt="MailSlurp API Key" width="100%" />
+        </td>
+    </tr>
+</table>
+
+After that, make sure to **restart dev** environment, and then you can run the tests by executing the following commands:
+- Test Backend
+```bash
+pnpm backend:test
+```
+- Test Frontend
+```bash
+pnpm frontend:test
+```
 
 Here is the list of values that **MUST BE THE SAME** in both backend and frontend **.env** files:
 
@@ -45,4 +82,87 @@ Here is the list of values that **MUST BE THE SAME** in both backend and fronten
 | FRONTEND_URL  | NEXT_PUBLIC_FRONTEND_URL  |
 | JWT_SECRET    | JWT_SECRET                |
 
-At this point, your application should be up and running locally. Adjust values, domains, and environment settings as needed.
+## Examples
+
+This section provides examples of setting up the ENT Stack on different operating systems.
+
+### 🐧 Ubuntu 24 setup including prerequisites
+
+1/ Update the package index
+```bash
+sudo apt update
+```
+
+2/ Download the latest version of Node.js 22
+```bash
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+```
+
+3/ Install Node.js 22
+```bash
+sudo apt install -y nodejs
+```
+
+4/ Check Node.js version
+```bash
+node -v
+```
+
+5/ Install NPM 11
+```bash
+sudo npm install -g npm@11
+```
+
+6/ Install PNPM
+```bash
+sudo npm install -g pnpm
+```
+
+7/ Install prerequisites for Docker
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+```
+
+8/ Add Docker's official GPG key
+```bash
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+```
+
+9/ Add Docker's official APT repository
+```bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+10/ Update the package index to include Docker's repository
+```bash
+sudo apt update
+```
+
+11/ Install Docker components (Docker Engine, CLI, containerd, Buildx, and Compose plugin)
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+```
+
+12/ Add your user to the Docker group
+```bash
+sudo usermod -aG docker $USER
+```
+
+13/ Apply the group membership changes
+```bash
+newgrp docker
+```
+
+13/ Create a new project
+
+```bash
+pnpm create ent-stack@latest
+```
+
+14/ Go to the new project
+
+```bash
+cd <your project>
+```
+
+Now your project is created, and you can proceed with the setup (check the project's `README.md` for the next steps).
